@@ -13,7 +13,7 @@
         
         <div id="app" class="h-100 position-relative">
 
-            <div class="my-box d-flex position-absolute">
+            <div class="my-box d-flex position-absolute rounded-3 overflow-hidden">
                 <!-- LEFT SIDE OF BOX -->
                 <div class="left-box w-25 h-100">
                     <!-- PROFILE BAR -->
@@ -44,16 +44,16 @@
                     </div>
                     <!-- CHAT LIST -->
                     <div id="chat-list" class="">
-                        <div v-for="contact in contacts" class="chat w-100 d-flex justify-content-between gap-2 px-2 border-top">
+                        <div v-for="contact in contacts" class="chat w-100 d-flex gap-2 px-2 border-top overflow-hidden">
                             <div class="d-flex align-items-center">
                                 <img :src="contact.avatar" class="h-75 rounded-circle" alt="">
                             </div>
-                            <div>
+                            <div class="w-100">
                                 <strong class="d-block">{{ contact.name }}</strong>
-                                <small>Ultimo messaggio inviato</small>
+                                <small> {{contact.messages[(contact.messages.length)-1].message}} </small>
                             </div>
                             <div>
-                                <small>12:00</small>
+                                <small>{{contact.messages[(contact.messages.length)-1].date.slice(10,16)}}</small>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                 <!-- RIGHT SIDE OF BOX -->
                 <div class="right-box w-75 h-100">
                     <!-- CHAT TOP BAR -->
-                    <div id="chat-top-bar" class="w-100 d-flex justify-content-between px-2">
+                    <div id="chat-top-bar" class="w-100 d-flex justify-content-between px-3">
                         <div class="d-flex align-items-center gap-2">
                             <img :src="profile.avatar" class="h-75 rounded-circle" alt="">
                             <div class="d-flex flex-column">
@@ -81,13 +81,13 @@
                             <span class="p-3">Messaggio inviato</span>
                         </div>
                         <div class="message p-2 received">
-                            <span class="p-3">Messaggio inviato</span>
+                            <span class="p-3">Messaggio ricevuto</span>
                         </div>
                         <div class="message p-2 sent">
                             <span class="p-3">Messaggio inviato</span>
                         </div>
                         <div class="message p-2 received">
-                            <span class="p-3">Messaggio inviato</span>
+                            <span class="p-3">Messaggio ricevuto</span>
                         </div>
                     </div>
                     <!-- MESSAGE INPUT BAR -->
