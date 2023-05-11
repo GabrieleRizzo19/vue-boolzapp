@@ -1,5 +1,5 @@
 body{
-    background-color: aqua;
+    background-color: red;
 }
 
 div{
@@ -7,14 +7,36 @@ div{
 }
 
 .my-box{
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin: 10vh auto;
+    width: 90%;
+    max-width: 1200px;
 }
 
-.contact-column{
-    background-color: green;
+#profile-bar{
+    height: 75px;
+    background-color: lightgrey;
 }
 
-.chat-column{
-    background-color: red;
+#enable-notifications-bar{
+    height: 85px;
+    background-color: lightskyblue;
+}
+
+#bell-icon{
+    background-color: white;
+    color: lightskyblue;
+}
+
+#searchbar{
+    height: 50px;
+    background-color: lightgrey;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+.chat{
+    height: 85px;
+    background-color: white;
 }
