@@ -1,3 +1,7 @@
+a{
+    cursor: pointer;
+}
+
 body{
     background-color: red;
 }
@@ -14,7 +18,7 @@ div{
 
 #profile-bar{
     height: 75px;
-    background-color: lightgrey;
+    background-color: #eaeaea;
 }
 
 #enable-notifications-bar{
@@ -29,7 +33,7 @@ div{
 
 #searchbar{
     height: 50px;
-    background-color: lightgrey;
+    background-color: #eaeaea;
 }
 
 input::placeholder{

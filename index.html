@@ -14,32 +14,32 @@
         <div id="app" class="h-100">
 
             <div class="my-box h-100 d-flex">
-                <div class="left-box w-25 d-flex flex-wrap">
+                <div class="left-box w-25">
                     <div id="profile-bar" class="w-100 d-flex justify-content-between px-2">
                         <div class="d-flex align-items-center gap-2">
                             <img :src="profile.avatar" class="h-75 rounded-circle" alt="">
                             <span>{{ profile.name }}</span>
                         </div>
-                        <div class="d-flex justify-content-around align-items-center gap-2">
-                            <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fa-solid fa-message"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <div class="d-flex justify-content-around align-items-center">
+                            <button class="border-0 bg-transparent"><i class="fa-solid fa-circle-notch text-secondary"></i></button>
+                            <button class="border-0 bg-transparent"><i class="fa-solid fa-message text-secondary"></i></button>
+                            <button class="border-0 bg-transparent"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></button>
                         </div>
                     </div>
                     <div id="enable-notifications-bar" class="d-flex gap-2 px-2">
                         <div class="d-flex align-items-center">
                             <i id="bell-icon" class="fa-solid fa-bell-slash p-3 rounded-circle fs-3"></i>
                         </div>
-                        <div>
-                            <strong class="d-block">Ricevi notifiche di nuovi messaggi</strong>
-                            <small>Attiva notifiche desktop</small>
+                        <div class="d-flex flex-wrap align-items-center">
+                            <span class="d-block">Ricevi notifiche di nuovi messaggi</span>
+                            <a class="text-secondary"><small>Attiva notifiche desktop</small></a>
                         </div>
                     </div>
                     <div id="searchbar" class="w-100 d-flex p-2">
                         <input type="text" placeholder="🔍 Cerca o inizia una nuova chat" class="w-100 rounded-3 border-0">
                     </div>
                     <div id="chat-list">
-                        <div v-for="contact in contacts" class="chat d-flex justify-content-between gap-2 px-2 border-top">
+                        <div v-for="contact in contacts" class="chat w-100 d-flex justify-content-between gap-2 px-2 border-top">
                             <div class="d-flex align-items-center">
                                 <img :src="contact.avatar" class="h-75 rounded-circle" alt="">
                             </div>
@@ -53,7 +53,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="right-box w-75">b</div>
+                <div class="right-box w-75">
+
+                </div>
 
                 
             </div>
