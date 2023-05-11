@@ -1,3 +1,9 @@
+:root{
+    --top-bar-height: 75px;
+    --enable-notifications-height: 85px;
+    --searchbar-height: 50px;
+}
+
 a{
     cursor: pointer;
 }
@@ -16,13 +22,13 @@ div{
     max-width: 1200px;
 }
 
-#profile-bar{
-    height: 75px;
+#profile-bar, #chat-top-bar{
+    height: var(--top-bar-height);
     background-color: #eaeaea;
 }
 
 #enable-notifications-bar{
-    height: 85px;
+    height: var(--enable-notifications-height);
     background-color: lightskyblue;
 }
 
@@ -32,7 +38,7 @@ div{
 }
 
 #searchbar{
-    height: 50px;
+    height: var(--searchbar-height);
     background-color: #eaeaea;
 }
 
@@ -40,7 +46,12 @@ input::placeholder{
     text-align: center;
 }
 
+#chat-list{
+    height: calc( 100% -  var(--top-bar-height) - var(--enable-notifications-height) -  var(--searchbar-height));
+}
+
 .chat{
     height: 85px;
     background-color: white;
 }
+
