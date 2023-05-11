@@ -1,0 +1,20 @@
+body{
+    background-color: aqua;
+}
+
+div{
+    border: 1px solid white;
+}
+
+.my-box{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.contact-column{
+    background-color: green;
+}
+
+.chat-column{
+    background-color: red;
+}
