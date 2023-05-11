@@ -11,10 +11,12 @@
     </head>
     <body>
         
-        <div id="app" class="h-100">
+        <div id="app" class="h-100 position-relative">
 
-            <div class="my-box h-100 d-flex">
-                <div class="left-box w-25">
+            <div class="my-box d-flex position-absolute">
+                <!-- LEFT SIDE OF BOX -->
+                <div class="left-box w-25 h-100">
+                    <!-- PROFILE BAR -->
                     <div id="profile-bar" class="w-100 d-flex justify-content-between px-2">
                         <div class="d-flex align-items-center gap-2">
                             <img :src="profile.avatar" class="h-75 rounded-circle" alt="">
@@ -26,18 +28,21 @@
                             <button class="border-0 bg-transparent"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></button>
                         </div>
                     </div>
-                    <div id="enable-notifications-bar" class="d-flex gap-2 px-2">
-                        <div class="d-flex align-items-center">
-                            <i id="bell-icon" class="fa-solid fa-bell-slash p-3 rounded-circle fs-3"></i>
+                    <!-- ENABLE NOTIFICATIONS BAR -->
+                    <div id="enable-notifications-bar" class="d-flex gap-2 px-2 align-items-center">
+                        <div id="bell-icon" class="h-75 d-flex align-items-center justify-content-center rounded-circle">
+                            <i class="fa-solid fa-bell-slash p-3 fs-3"></i>
                         </div>
                         <div class="d-flex flex-column">
                             <span>Ricevi notifiche di nuovi messaggi</span>
                             <a class="text-secondary"><small>Attiva notifiche desktop</small></a>
                         </div>
                     </div>
+                    <!-- SEARCHBAR -->
                     <div id="searchbar" class="w-100 d-flex p-2">
                         <input type="text" placeholder="🔍 Cerca o inizia una nuova chat" class="w-100 rounded-3 border-0">
                     </div>
+                    <!-- CHAT LIST -->
                     <div id="chat-list" class="">
                         <div v-for="contact in contacts" class="chat w-100 d-flex justify-content-between gap-2 px-2 border-top">
                             <div class="d-flex align-items-center">
@@ -53,7 +58,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="right-box w-75">
+                <!-- RIGHT SIDE OF BOX -->
+                <div class="right-box w-75 h-100">
+                    <!-- CHAT TOP BAR -->
                     <div id="chat-top-bar" class="w-100 d-flex justify-content-between px-2">
                         <div class="d-flex align-items-center gap-2">
                             <img :src="profile.avatar" class="h-75 rounded-circle" alt="">
@@ -68,12 +75,35 @@
                             <button class="border-0 bg-transparent"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></button>
                         </div>
                     </div>
+                    <!-- CHAT BOX -->
+                    <div id="chat-box" class="d-flex flex-column p-4 gap-2">
+                        <div class="message p-2 sent">
+                            <span class="p-3">Messaggio inviato</span>
+                        </div>
+                        <div class="message p-2 received">
+                            <span class="p-3">Messaggio inviato</span>
+                        </div>
+                        <div class="message p-2 sent">
+                            <span class="p-3">Messaggio inviato</span>
+                        </div>
+                        <div class="message p-2 received">
+                            <span class="p-3">Messaggio inviato</span>
+                        </div>
+                    </div>
+                    <!-- MESSAGE INPUT BAR -->
+                    <div id="message-input-bar" class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <button class="border-0 bg-transparent px-5 fs-4"><i class="fa-regular fa-face-smile text-secondary"></i></button>
+                        </div>
+                        <div class="w-100 d-flex align-items-center">
+                            <input class="w-100 h-75 border-0 rounded-3" type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <button class="border-0 bg-transparent px-5 fs-4"><i class="fa-solid fa-microphone text-secondary"></i></button>
+                        </div>
+                    </div>
                 </div>
-
-                
             </div>
-
-            
 
         </div>
 

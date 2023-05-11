@@ -2,6 +2,7 @@
     --top-bar-height: 75px;
     --enable-notifications-height: 85px;
     --searchbar-height: 50px;
+    --message-input-height: 75px;
 }
 
 a{
@@ -9,17 +10,17 @@ a{
 }
 
 body{
-    background-color: red;
-}
-
-div{
-    border: 1px solid white;
+    background: no-repeat linear-gradient(#009688 20%, #d2dbdb 20% 80%);
+    height: 100vh;
 }
 
 .my-box{
-    margin: 10vh auto;
     width: 90%;
+    height: 80%;
     max-width: 1200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #profile-bar, #chat-top-bar{
@@ -35,6 +36,7 @@ div{
 #bell-icon{
     background-color: white;
     color: lightskyblue;
+    aspect-ratio: 1/1;
 }
 
 #searchbar{
@@ -42,12 +44,10 @@ div{
     background-color: #eaeaea;
 }
 
-input::placeholder{
-    text-align: center;
-}
-
 #chat-list{
     height: calc( 100% -  var(--top-bar-height) - var(--enable-notifications-height) -  var(--searchbar-height));
+    background-color: white;
+    overflow-y: auto;
 }
 
 .chat{
@@ -55,3 +55,29 @@ input::placeholder{
     background-color: white;
 }
 
+#chat-box{
+    height: calc( 100% - var(--top-bar-height) - var(--message-input-height) );
+    background-image: url(../img/mine.png);
+    overflow-y: auto;
+}
+
+#message-input-bar{
+    height: var(--message-input-height);
+    background-color: #eaeaea;
+}
+
+.message.sent{
+    text-align: right;
+}
+
+.message.sent span{
+    background-color: #d5f9ba;
+    border-radius: 1rem;
+    border-bottom-right-radius: 0;
+}
+
+.message.received span{
+    background-color: white;
+    border-radius: 1rem;
+    border-bottom-left-radius: 0;
+}
