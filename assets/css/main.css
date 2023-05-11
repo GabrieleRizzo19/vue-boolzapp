@@ -1,3 +1,5 @@
+/* VARIABLES */
+
 :root{
     --top-bar-height: 75px;
     --enable-notifications-height: 85px;
@@ -5,14 +7,19 @@
     --message-input-height: 75px;
 }
 
+/* GENERIC */
+
 a{
     cursor: pointer;
 }
 
+/* BODY */
 body{
     background: no-repeat linear-gradient(#009688 20%, #d2dbdb 20% 80%);
     height: 100vh;
 }
+
+/* BOX */
 
 .my-box{
     width: 90%;
@@ -21,7 +28,10 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
 }
+
+/* LEFT SIDE OF BOX */
 
 #profile-bar, #chat-top-bar{
     height: var(--top-bar-height);
@@ -55,6 +65,8 @@ body{
     background-color: white;
 }
 
+/* RIGHT SIDE OF BOX */
+
 #chat-box{
     height: calc( 100% - var(--top-bar-height) - var(--message-input-height) );
     background-image: url(../img/mine.png);
@@ -74,10 +86,14 @@ body{
     background-color: #d5f9ba;
     border-radius: 1rem;
     border-bottom-right-radius: 0;
+    max-width: 50%;
+    word-break: break-all;
 }
 
 .message.received span{
     background-color: white;
     border-radius: 1rem;
     border-bottom-left-radius: 0;
+    word-break: break-all;
+    max-width: 50%;
 }
