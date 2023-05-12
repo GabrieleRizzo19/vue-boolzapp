@@ -66,6 +66,10 @@ body{
     cursor: pointer;
 }
 
+.chat:hover{
+    background-color: #eaeaea;
+}
+
 /* RIGHT SIDE OF BOX */
 
 #chat-box{

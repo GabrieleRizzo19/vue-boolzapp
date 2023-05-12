@@ -177,6 +177,31 @@ createApp({
     methods: {
         changeCurrentContactChat(i){
             this.currentContactChat = i;
+        },
+        sendMessage(){
+            const lastMessageIndex = this.contacts[this.currentContactChat].messages.length -1;
+            const newMessage= {
+                date: this.contacts[this.currentContactChat].messages[lastMessageIndex].date,
+                message: this.newMessageInput,
+                status: 'sent'
+            }
+
+            this.contacts[this.currentContactChat].messages.push(newMessage);
+            this.newMessageInput = "";
+
+            setTimeout(() => {
+                this.receiveMessage();
+            }, 1000);
+        },
+        receiveMessage(){
+            const lastMessageIndex = this.contacts[this.currentContactChat].messages.length -1;
+            const newMessage= {
+                date: this.contacts[this.currentContactChat].messages[lastMessageIndex].date,
+                message: "OK!",
+                status: 'received'
+            }
+
+            this.contacts[this.currentContactChat].messages.push(newMessage);
         }
     }
 }).mount("#app")

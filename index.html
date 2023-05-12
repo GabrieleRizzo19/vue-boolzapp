@@ -91,10 +91,11 @@
                             <button class="border-0 bg-transparent px-5 fs-4"><i class="fa-regular fa-face-smile text-secondary"></i></button>
                         </div>
                         <div class="w-100 d-flex align-items-center">
-                            <input class="w-100 h-75 border-0 rounded-3" type="text" v-model="newMessageInput" placeholder="Scrivi un messaggio">
+                            <input class="w-100 h-75 border-0 rounded-3" type="text" v-model="newMessageInput" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage">
                         </div>
                         <div class="d-flex align-items-center">
-                            <button class="border-0 bg-transparent px-5 fs-4"><i class="fa-solid fa-microphone text-secondary"></i></button>
+                            <button v-if="newMessageInput.length === 0" class="border-0 bg-transparent px-5 fs-4"><i class="fa-solid fa-microphone text-secondary"></i></button>
+                            <button v-else class="border-0 bg-transparent px-5 fs-4" @click="sendMessage"><i class="fa-solid fa-paper-plane text-secondary"></i></i></button>
                         </div>
                     </div>
                 </div>
