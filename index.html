@@ -44,7 +44,7 @@
                     </div>
                     <!-- CHAT LIST -->
                     <div id="chat-list" class="">
-                        <div v-for="contact in contacts" class="chat w-100 d-flex gap-2 px-2 border-top overflow-hidden">
+                        <div v-for="(contact, i) in contacts" class="chat w-100 d-flex gap-2 px-2 border-top overflow-hidden" @click="changeCurrentContactChat(i)">
                             <div class="d-flex align-items-center">
                                 <img :src="contact.avatar" class="h-75 rounded-circle" alt="">
                             </div>
@@ -77,28 +77,11 @@
                     </div>
                     <!-- CHAT BOX -->
                     <div id="chat-box" class="d-flex flex-column p-4 gap-2">
-                        <div class="message sent">
+    
+                        <div v-for="message in contacts[currentContactChat].messages" :class="['message', message.status === 'sent' ? 'sent' : 'received']">
                             <div class="p-3">
-                                Messaggio inviatoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                                <span class="d-block text-end">12:00</span>
-                            </div>
-                        </div>
-                        <div class="message received">
-                            <div class="p-3">
-                                Messaggio ricevuto
-                                <span class="d-block text-end">12:00</span>
-                            </div>
-                        </div>
-                        <div class="message sent">
-                            <div class="p-3">
-                                Messaggio inviato
-                                <span class="d-block text-end">12:00</span>
-                            </div>
-                        </div>
-                        <div class="message received">
-                            <div class="p-3">
-                                Messaggio ricevuto
-                                <span class="d-block text-end">12:00</span>
+                                {{ message.message }}
+                                <span class="d-block text-end">{{ message.date.slice(10,16) }}</span>
                             </div>
                         </div>
                     </div>

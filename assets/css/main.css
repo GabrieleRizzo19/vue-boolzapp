@@ -63,6 +63,7 @@ body{
 .chat{
     height: 85px;
     background-color: white;
+    cursor: pointer;
 }
 
 /* RIGHT SIDE OF BOX */

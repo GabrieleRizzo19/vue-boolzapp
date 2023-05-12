@@ -5,7 +5,7 @@ createApp({
         return{
             profile: {
                 name: 'Gabriele',
-                avatar: './assets/img/avatar_1.png'
+                avatar: './assets/img/avatar_2.png'
             },
             contacts: [
                 {
@@ -169,8 +169,14 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            currentContactChat: 0
             
+        }
+    },
+    methods: {
+        changeCurrentContactChat(i){
+            this.currentContactChat = i;
         }
     }
 }).mount("#app")
