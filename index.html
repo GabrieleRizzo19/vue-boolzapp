@@ -63,9 +63,9 @@
                     <!-- CHAT TOP BAR -->
                     <div id="chat-top-bar" class="w-100 d-flex justify-content-between px-3">
                         <div class="d-flex align-items-center gap-2">
-                            <img :src="profile.avatar" class="h-75 rounded-circle" alt="">
+                            <img :src="contacts[currentContactChat].avatar" class="h-75 rounded-circle" alt="">
                             <div class="d-flex flex-column">
-                                <strong>Michele</strong>
+                                <strong>{{contacts[currentContactChat].name}}</strong>
                                 <small>Ultimo accesso oggi alle 12:00</small>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                             <button class="border-0 bg-transparent px-5 fs-4"><i class="fa-regular fa-face-smile text-secondary"></i></button>
                         </div>
                         <div class="w-100 d-flex align-items-center">
-                            <input class="w-100 h-75 border-0 rounded-3" type="text" placeholder="Scrivi un messaggio">
+                            <input class="w-100 h-75 border-0 rounded-3" type="text" v-model="newMessageInput" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="d-flex align-items-center">
                             <button class="border-0 bg-transparent px-5 fs-4"><i class="fa-solid fa-microphone text-secondary"></i></button>

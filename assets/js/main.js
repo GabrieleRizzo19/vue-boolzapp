@@ -170,8 +170,8 @@ createApp({
                     ],
                 }
             ],
-            currentContactChat: 0
-            
+            currentContactChat: 0,
+            newMessageInput: ""
         }
     },
     methods: {
