@@ -78,11 +78,20 @@ body{
     background-color: #eaeaea;
 }
 
-.message.sent{
-    text-align: right;
+.message{
+    display: flex;
 }
 
-.message.sent span{
+.message > div > span{
+    font-size: 12px;
+}
+
+.message.sent{
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+.message.sent div{
     background-color: #d5f9ba;
     border-radius: 1rem;
     border-bottom-right-radius: 0;
@@ -90,7 +99,7 @@ body{
     word-break: break-all;
 }
 
-.message.received span{
+.message.received div{
     background-color: white;
     border-radius: 1rem;
     border-bottom-left-radius: 0;
