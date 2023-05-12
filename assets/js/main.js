@@ -179,7 +179,7 @@ createApp({
             this.currentContactChat = i;
         },
         sendMessage(){
-            const lastMessageIndex = this.contacts[this.currentContactChat].messages.length -1;
+            const lastMessageIndex = this.getLastMessageIndex(this.currentContactChat);
             const newMessage= {
                 date: this.contacts[this.currentContactChat].messages[lastMessageIndex].date,
                 message: this.newMessageInput,
@@ -194,14 +194,16 @@ createApp({
             }, 1000);
         },
         receiveMessage(){
-            const lastMessageIndex = this.contacts[this.currentContactChat].messages.length -1;
+            const lastMessageIndex = this.getLastMessageIndex(this.currentContactChat);
             const newMessage= {
                 date: this.contacts[this.currentContactChat].messages[lastMessageIndex].date,
                 message: "OK!",
                 status: 'received'
             }
-
             this.contacts[this.currentContactChat].messages.push(newMessage);
+        },
+        getLastMessageIndex(currentContactChat){
+            return (this.contacts[currentContactChat].messages.length -1);
         }
     }
 }).mount("#app")
