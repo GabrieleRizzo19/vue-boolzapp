@@ -66,6 +66,10 @@ body{
     cursor: pointer;
 }
 
+.chat-name{
+    word-break: break-all;
+}
+
 .chat:hover{
     background-color: #eaeaea;
 }
@@ -110,4 +114,15 @@ body{
     border-bottom-left-radius: 0;
     word-break: break-all;
     max-width: 50%;
+}
+
+.my-message-menu{
+    top: 0;
+    right: 0;
+    display: none;
+    border: none;
+}
+
+.message:hover .my-message-menu{
+    display: inline-block;
 }

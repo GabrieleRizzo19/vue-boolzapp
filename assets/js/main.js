@@ -171,7 +171,8 @@ createApp({
                 }
             ],
             currentContactChat: 0,
-            newMessageInput: ""
+            newMessageInput: "",
+            searchValue: ""
         }
     },
     methods: {
@@ -191,7 +192,7 @@ createApp({
 
             setTimeout(() => {
                 this.receiveMessage();
-            }, 1000);
+            }, 1500);
         },
         receiveMessage(){
             const lastMessageIndex = this.getLastMessageIndex(this.currentContactChat);
@@ -204,6 +205,16 @@ createApp({
         },
         getLastMessageIndex(currentContactChat){
             return (this.contacts[currentContactChat].messages.length -1);
+        },
+        searchContact(){
+            this.contacts.forEach(element => {
+                const loweredName = element.name.toLowerCase();
+                if(loweredName.includes(this.searchValue)){
+                    element.visible = true;
+                }else{
+                    element.visible = false
+                }
+            });
         }
     }
 }).mount("#app")
