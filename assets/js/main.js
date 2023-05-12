@@ -215,6 +215,9 @@ createApp({
                     element.visible = false
                 }
             });
+        },
+        deleteMessage(i){
+            this.contacts[this.currentContactChat].messages.splice(i,1);
         }
     }
 }).mount("#app")
